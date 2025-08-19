@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Form </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #28a745, #a5e770);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+
+    .form-wrapper input,
+    .form-wrapper textarea,
+    .form-wrapper select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #eafaf1;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .form-wrapper input:focus,
+    .form-wrapper textarea:focus,
+    .form-wrapper select:focus {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+    .form-wrapper button {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .form-wrapper button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .faq-section {
+      background-color: #f0f8f5;
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+
+    .faq-section h3 {
+      font-size: 2rem;
+      color: #28a745;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .faq {
+      padding: 15px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .faq:hover {
+      background-color: #eaffd5;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .faq.active .faq-answer {
+      display: block;
+    }
+
+
+
+    .form-wrapper h2 {
+      color: #198754;
+    }
+
+    .btn-success:hover {
+      background-color: #157347;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    @media (min-width: 992px) {
+      .hover-dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    .nav-link span:hover {
+      text-decoration: underline;
+      text-decoration-color: #aee95e;
+      text-decoration-thickness: 4px;
+    }
+
+    .nav-link:hover i {
+      text-decoration: none !important;
+    }
+
+    .hover-dropdown:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .navbar-brand {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid px-3">
+        <a class="navbar-brand" href="index.html">
+          <img src="../images/logo.png" alt="logo" style="height:70px;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center gap-3">
+
+            <li class="nav-item dropdown hover-dropdown me-5">
+              <a class="nav-link d-flex align-items-center" href="#" id="adoptDropdown" role="button">
+                <i class="fas fa-paw me-2"></i> <span>Adopt</span>
+                <i class="fas fa-angle-down ms-2 dropdown-arrow"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="adoptDropdown">
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="dogsadopt.html">
+                    <img src="../images/cats/catkitlogo.png" class="me-2" style="height:30px;">
+                    Dogs & Puppies
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center" href="catsadopt.html">
+                    <img src="../images/dogs/doglogo.png" class="me-2" style="height:30px;">
+                    Cats & Kittens
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center me-5" href="../volunteer.html">
+                <i class="fas fa-hands-helping me-2"></i> <span>Volunteer</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center me-5" href="../about.html">
+                <i class="fas fa-info-circle me-2"></i><span> About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="../resources.html">
+                <i class="fas fa-book-open me-4"></i> <span>Resources</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <h1>Book an Appointment</h1>
+      <p>Schedule your visit to Home For Paws - We look forward to seeing you!</p>
+    </header>
+
+    <!-- Appointment Form -->
+    <section class="form-wrapper container py-5">
+      <h2 class="text-center mb-4 wow animate__animated animate__fadeInDown">Appointment Details</h2>
+      <form id="appointmentForm" class="bg-light p-4 rounded shadow wow animate__animated animate__fadeInUp"
+        data-wow-delay="0.2s">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+        </div>
+        <div class="mb-3">
+          <label for="appointmentDate" class="form-label">Appointment Date</label>
+          <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="timeSlot" class="form-label">Preferred Time Slot</label>
+          <select id="timeSlot" name="timeSlot" class="form-select" required>
+            <option value="" disabled selected>Select a time slot</option>
+            <option value="9:00 AM - 11:00 AM">9:00 AM - 11:00 AM</option>
+            <option value="11:00 AM - 1:00 PM">11:00 AM - 1:00 PM</option>
+            <option value="1:00 PM - 3:00 PM">1:00 PM - 3:00 PM</option>
+            <option value="3:00 PM - 5:00 PM">3:00 PM - 5:00 PM</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message (Optional)</label>
+          <textarea id="message" name="message" class="form-control" rows="4"
+            placeholder="Your message or special requests"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success px-4">Book Appointment</button>
+        </div>
+      </form>
+      <p id="formMessage" class="text-center mt-3 text-success fw-bold"></p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section container">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq">
+        <strong>What should I bring for my appointment?</strong>
+        <div class="faq-answer">
+          Please bring your ID and any necessary medical or history documents for the appointment.
+        </div>
+      </div>
+      <div class="faq">
+        <strong>How do I reschedule my appointment?</strong>
+        <div class="faq-answer">
+          You can reschedule your appointment by contacting our office directly.
+        </div>
+      </div>
+      <div class="faq">
+        <strong>What if I need to cancel?</strong>
+        <div class="faq-answer">
+          If you need to cancel, please notify us at least 24 hours in advance.
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <!--------------------------------------- Footer------------------------------------ -->
+    <footer class="footer-section text-white pt-4 pb-3" style="background-color: #042401;">
+      <div class="container">
+        <!--Left-->
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0 d-flex align-items-center gap-3">
+            <img src="../images/logo.png" alt="Logo" style="height: 60px;">
+            <div>
+              <p class="mb-0 small"><i class="fas fa-map-marker-alt me-1"></i> India</p>
+              <p class="mb-0 small"><i class="fas fa-phone-alt me-1"></i> 12345676</p>
+              <p class="mb-0 small"><i class="fas fa-envelope me-1"></i> homeforpaws@gmail.com</p>
+            </div>
+          </div>
+          <!-- Right-->
+          <div class="col-md-6 text-md-end">
+            <div class="mb-2">
+              <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white me-3"><i class="bi bi-x"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom -->
+        <hr class="border-light my-3" />
+        <div class="text-center small">© 2025 Home For Paws · All rights reserved</div>
+      </div>
+    </footer>
+
+
+    <script>
+
+      document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const appointmentDate = document.getElementById("appointmentDate").value;
+        const timeSlot = document.getElementById("timeSlot").value;
+        const message = document.getElementById("message").value.trim();
+        const formMessage = document.getElementById("formMessage");
+
+        if (!name || !email || !phone || !appointmentDate || !timeSlot) {
+          formMessage.textContent = "Pleasefill all the required fields.";
+          formMessage.style.color = "red";
+        } else {
+          formMessage.textContent = "Appointment booked successfully!";
+          formMessage.style.color = "green";
+          document.getElementById("appointmentForm").reset();
+
+          document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            document.getElementById("formMessage").textContent = "Your appointment has been booked successfully!";
+            this.reset();
+          });
+
+
+        }
+      });
+      const faqs = document.querySelectorAll(".faq");
+      faqs.forEach(faq => {
+        faq.addEventListener("click", function () {
+          this.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+
+</html>
