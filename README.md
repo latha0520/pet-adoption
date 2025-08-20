@@ -1,4 +1,4 @@
-##Home For Paws-Design Of A Pet Adoption Website
+## Home For Paws-Design Of A Pet Adoption Website
 
 A simple Pet Adoption Website built using HTML, CSS, and JavaScript.
 The site helps users explore adoptable pets, learn about adoption, and easily get in touch with the organization.
