@@ -30,3 +30,5 @@ CSS3 – Styling & Layout
 JavaScript – Interactivity
 Animate.css
 Wow.Js
+
+📸HomePage![petadoptmain](https://github.com/user-attachments/assets/37b6c66a-e70e-4247-9819-9b977a71ac5d)
