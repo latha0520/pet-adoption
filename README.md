@@ -31,5 +31,7 @@ JavaScript – Interactivity
 Animate.css
 Wow.Js
 
-Live Preview: https://latha0520.github.io/pet-adoption/
-📸HomePage![petadoptmain](https://github.com/user-attachments/assets/37b6c66a-e70e-4247-9819-9b977a71ac5d)
+📸Live Preview: https://latha0520.github.io/pet-adoption/
+
+
+HomePage![petadoptmain](https://github.com/user-attachments/assets/37b6c66a-e70e-4247-9819-9b977a71ac5d)
